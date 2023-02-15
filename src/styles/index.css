@@ -1,0 +1,8 @@
+body {
+  background-color: rgb(209, 204, 204);
+  height: 100vw;
+}
+body #root {
+  padding: 1rem;
+  bottom: 0;
+}/*# sourceMappingURL=index.css.map */
