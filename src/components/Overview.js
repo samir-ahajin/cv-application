@@ -1,17 +1,18 @@
-export default function Overview({ personalInfo, education }) {
+export default function Overview({ showModal, closeModal, finalCVInfo }) {
+  if (!showModal) return null;
+
   return (
     <>
-      <div>
-        <ul>
-          <li>{personalInfo.firstName}</li>
-          <li>{personalInfo.lastName}</li>
-          <li>{personalInfo.age}</li>
-          <li>{personalInfo.gender}</li>
-          <li>{personalInfo.address}</li>
-          <li>{personalInfo.contactNumber}</li>
-          <li>{personalInfo.email}</li>
-          <li>{personalInfo.description}</li>
-        </ul>
+      <div id="overlay"></div>
+      <div id="final">
+        <button
+          onClick={(e) => {
+            closeModal(e);
+          }}
+        >
+          Cancel
+        </button>
+        <p>{JSON.stringify(finalCVInfo)}</p>
       </div>
     </>
   );

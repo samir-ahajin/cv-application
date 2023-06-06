@@ -1,8 +1,74 @@
 body {
-  background-color: rgb(209, 204, 204);
+  background-color: rgb(224, 224, 224);
   height: 100vw;
+  padding: 1rem;
 }
 body #root {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+body #root #main {
   padding: 1rem;
+  background-color: white;
+  width: 100%;
+  max-width: 800px;
+  min-width: 200px;
+}
+body #root #main form div {
+  margin: 1rem;
+}
+body #root #main form #personal-info input[type=file] {
+  width: 0.1px;
+  height: 0.1px;
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  z-index: -1;
+}
+body #root #main form #personal-info input[type=file] + label {
+  padding: 10px 1rem;
+  color: white;
+  background-color: rgb(5, 123, 233);
+  display: inline-block;
+}
+body #root #main form #personal-info input[type=file]:focus + label,
+body #root #main form #personal-info input[type=file] + label:hover {
+  background-color: red;
+}
+body #root #main input {
+  padding: 2px 1rem;
+  margin-left: 10px;
+}
+body #root #main .grid-con {
+  display: grid;
+  grid-template-columns: auto auto;
+}
+body #root #main .btn {
+  width: 100%;
+  max-width: 180px;
+  min-width: 40px;
+  padding: 10px 1rem;
+  color: white;
+  background-color: rgb(5, 123, 233);
+  border-style: none;
+  justify-content: center;
+}
+body #final {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  padding: 50px;
+  z-index: 1000;
+}
+body #overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
   bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 1000;
 }/*# sourceMappingURL=index.css.map */

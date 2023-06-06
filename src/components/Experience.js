@@ -1,29 +1,33 @@
 import moment from "moment";
 
-export default function Experience({ exp, i, onExpChange, deleteExp }) {
+export default function Experience({ exp, i, onDataChange, deleteData }) {
   return (
     <>
-      <div>
-        <label htmlFor="companyName">Company Name:</label>
-        <input
-          name="companyName"
-          placeholder="SM Mall of Asia"
-          value={exp.companyName}
-          type="text"
-          onChange={(e) => {
-            onExpChange(e, i, "exp");
-          }}
-        />
+      <div className="grid-con">
+        <div className="grid-item">
+          <label htmlFor="companyName">Company Name:</label>
+        </div>
+        <div className="grid-item">
+          <input
+            name="companyName"
+            placeholder="SM Mall of Asia"
+            value={exp.companyName}
+            type="text"
+            onChange={(e) => {
+              onDataChange(e, i, "exp");
+            }}
+          />
+        </div>
       </div>
       <div>
-        <label htmlFor="address">Address:</label>
+        <label htmlFor="exAddress">Address:</label>
         <input
-          name="address"
+          name="exAddress"
           placeholder="Manila City Philippines 7000"
-          value={exp.address}
+          value={exp.exAddress}
           type="text"
           onChange={(e) => {
-            onExpChange(e, i, "exp");
+            onDataChange(e, i, "exp");
           }}
         />
       </div>
@@ -35,7 +39,7 @@ export default function Experience({ exp, i, onExpChange, deleteExp }) {
           value={exp.position}
           type="text"
           onChange={(e) => {
-            onExpChange(e, i, "exp");
+            onDataChange(e, i, "exp");
           }}
         />
       </div>
@@ -49,7 +53,7 @@ export default function Experience({ exp, i, onExpChange, deleteExp }) {
           min="1996-01-01"
           max={moment().format("YYYY-MM-DD")}
           onChange={(e) => {
-            onExpChange(e, i, "exp");
+            onDataChange(e, i, "exp");
           }}
         ></input>
       </div>
@@ -63,14 +67,15 @@ export default function Experience({ exp, i, onExpChange, deleteExp }) {
           min="1996-01-01"
           max={moment().format("YYYY-MM-DD")}
           onChange={(e) => {
-            onExpChange(e, i, "exp");
+            onDataChange(e, i, "exp");
           }}
         ></input>
       </div>
       <div>
         <button
+          className="btn"
           onClick={() => {
-            deleteExp(i, "exp");
+            deleteData(i, "exp");
           }}
         >
           Delete
